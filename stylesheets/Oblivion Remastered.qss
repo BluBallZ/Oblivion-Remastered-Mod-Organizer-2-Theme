@@ -1,0 +1,1227 @@
+/*!*************************************
+  Oblivion Remastered
+****************************************
+  Author: BluBallZ
+  Version: 1.0
+  Licence: GNU General Public License v3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)
+  Url: https://github.com/BluBallZ?tab=repositories
+****************************************
+*/
+
+/* *********************** */
+/* COMMON STYLING */
+/* *********************** */
+
+* {
+  outline: 0; 
+}
+
+/* FONT STYLES & SIZE */
+
+QWidget {
+  background-color: Transparent;
+  color: #9e9978;
+  font-family: "Kingthings Petrock";
+  font-size: 16px;
+
+}
+
+QListWidget::item {
+  border-width: 0; /* list widget padding fix */
+}
+
+#installLabel {
+  color: none; /* prevent overriding install label color */
+}
+
+QToolButton {
+  border: none; /*  enable background-color for hover/focus/pressed states */
+}
+
+/* End of Common Styling */
+
+#centralWidget {
+  border-image: url(./Oblivion Remastered/background.png);
+}
+
+QMessageBox {
+  border-image: url(./Oblivion Remastered/FileTreeView.png);
+}
+
+
+QWidget::disabled {
+  color: #656565;
+}
+
+QAbstractItemView {
+  color: #9e9978;
+  background-color: rgba(0, 0, 0, 0);
+  alternate-background-color: rgba(0, 0, 0, 0);
+  border-color: #9e9978;
+  border-style: solid;
+  border-width: 1px;
+  show-decoration-selected: 1;
+}
+
+QAbstractItemView[filtered=true] {
+  border: 2px solid #f00 !important;
+}
+
+#PyCfgDialog, #ProblemsDialog, #TransferSavesDialog, #SettingsDialog, #ModInfoDialog, #InstallDialog, #TextViewer {
+  border-image: url(./Oblivion Remastered/FileTreeView.png);
+}
+
+#QueryOverwriteDialog {
+  min-width: 565px;
+}
+
+#ModInfoDialog {
+  min-width: 850px;
+}
+
+#filesView {
+  border-image: url(./Oblivion Remastered/FileTreeView.png);
+}
+
+QAbstractItemView::item:selected,
+QAbstractItemView::item:selected:hover,
+QAbstractItemView::item:alternate:selected,
+QAbstractItemView::item:alternate:selected:hover {
+  color: #f1f1f1;
+  border-radius: 4px;
+  border-top: 2px solid #9e9978;
+  border-bottom: 2px solid #9e9978;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 3px;
+}
+
+QAbstractItemView::item:hover,
+QAbstractItemView::item:alternate:hover,
+QAbstractItemView::item:disabled:hover,
+QAbstractItemView::item:alternate:disabled:hover {
+  color: #f1f1f1;
+  border-radius: 4px;
+  border-top: 2px solid #9e9978;
+  border-bottom: 2px solid #9e9978;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 3px;
+}
+
+/* *********************** */
+/* MENUBAR */
+/* *********************** */
+
+QMenuBar::item:selected {
+  background-color: rgba(158, 153, 120, 0.5);
+}
+
+/* ************************** */
+/* LCD COUNTER */
+/* ************************** */
+
+QLCDNumber {
+  border-color: #9e9978;
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* ************************************************************ */
+/* MAIN NAVIGATION BUTTON BAR AT TOP OF WINDOW */
+/* ************************************************************ */
+
+QToolBar {
+  border: none;
+  background-image: url(./Oblivion Remastered/OblivionToolbar.png); /* Corrected: Added .png */
+}
+
+QToolBar::separator {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+  width: 0;
+}
+
+QToolButton {
+  padding: 4px;
+  border: none;
+}
+
+QToolButton:hover, QToolButton:focus {
+  color: #f1f1f1;
+  border-color: #9e9978;
+  border-style: solid;
+  border-width: 1px 1px 1px;
+}
+
+QToolButton:pressed {
+  color: #f1f1f1;
+  border-color: #9e9978;
+  border-style: solid;
+  border-width: 1px 1px 1px;
+  background-color: rgba(158, 153, 120, 0.5);
+}
+
+QToolButton::menu-indicator {
+  image: url(./Oblivion Remastered/combobox-down.png);
+  subcontrol-origin: padding;
+  subcontrol-position: center right;
+  padding-top: 10%;
+  padding-right: 5%;
+}
+
+/* **************************************** */
+/* TABS ON TOP OF TREEVIEW */
+/* **************************************** */
+
+QTabWidget::pane {
+  border-color: #9e9978;
+  top: 0.1;
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+QTabWidget::pane:disabled {
+  border-top-color: #3f3f46;
+}
+
+QTabBar::tab {
+  margin-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 4px 1em;
+  border: solid;
+  border-color: #9e9978;
+  border-radius: 4px;
+  border-top: 2px solid #9e9978;
+  border-bottom: 2px solid #9e9978;
+}
+
+QTabBar::tab:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+}
+
+QTabBar::tab:selected,
+QTabBar::tab:selected:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+}
+
+QTabBar::tab:disabled {
+  background-color: transparent;
+  color: #656565;
+}
+
+QTabBar::tab:selected:disabled {
+  background-color: rgba(63, 63, 70, 0.8);
+}
+
+QTabBar QToolButton {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #9e9978;
+  padding: 1px;
+  margin: 0;
+  border-style: solid;
+  border-width: 1px;
+}
+
+QTabBar QToolButton:hover {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #DED7A8;
+  padding: 1px;
+  margin: 0;
+  border-style: solid;
+  border-width: 1px;
+}
+
+QTabBar QToolButton:disabled,
+QTabBar QToolButton:pressed:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+QTabBar::scroller {
+  width: 23px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+QTabBar QToolButton::right-arrow {
+  image: url(./Oblivion Remastered/scrollbar-right.png);
+}
+
+QTabBar QToolButton::right-arrow:hover {
+  image: url(./Oblivion Remastered/scrollbar-right-hover.png);
+}
+
+QTabBar QToolButton::left-arrow {
+  image: url(./Oblivion Remastered/scrollbar-left.png);
+}
+
+QTabBar QToolButton::left-arrow:hover {
+  image: url(./Oblivion Remastered/scrollbar-left-hover.png);
+}
+
+/* **************************************** */
+/* COLUMN NAMES OF TREEVIEW */
+/* **************************************** */
+
+QTableView {
+  gridline-color: #9e9978;
+  selection-background-color: transparent;
+  selection-color: #f1f1f1;
+  border-style: solid;
+  border-width: 1px;
+}
+
+QHeaderView {
+  border: none;
+  text-align: center;
+}
+
+QHeaderView::section {
+  background: transparent;
+  border-color: #9e9978;
+  padding: 2px 5px;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-radius: 4px;
+  border-top: 1px solid #9e9978;
+  border-bottom: 2px solid #9e9978;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+QHeaderView::section:hover {
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  border-radius: 4px;
+  border-top: 1px solid #DED7A8;
+  border-bottom: 2px solid #DED7A8;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+QHeaderView::section:last {
+  border-right: 0;
+}
+
+QHeaderView::up-arrow {
+  image: url(./Oblivion Remastered/sort-asc.png);
+  subcontrol-position: center right;
+  subcontrol-origin: padding;
+  padding-right: 5px;
+  padding-left: -10px;
+  width: 10px;
+  height: 10px;
+}
+
+QHeaderView::down-arrow {
+  image: url(./Oblivion Remastered/sort-desc.png);
+  subcontrol-position: center right;
+  subcontrol-origin: padding;
+  padding-right: 5px;
+  padding-left: -10px;
+  width: 10px;
+  height: 10px;
+}
+
+/* ********************* */
+/* HOVER */
+/* ********************* */
+
+QMenu::item:hover,
+QListView::item:hover,
+QTreeWidget::item:hover,
+QTreeView::branch:hover {
+  color: #f1f1f1;
+  border-radius: 4px;
+  border-top: 2px solid #9e9978;
+  border-bottom: 2px solid #9e9978;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 3px;
+}
+
+/* ******************************************************* */
+/* CONTEXT MENUS, TOOLBAR DROPDOWNS #QMENU */
+/* ******************************************************* */
+
+QMenu {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: #9e9978;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+}
+
+QMenu::item {
+  background: transparent;
+  padding: 4px 20px;
+}
+
+QMenu::item:selected {
+  background-color: rgba(158, 153, 120, 0.5);
+}
+
+QMenu::item:disabled {
+  background-color: transparent;
+}
+
+QMenu::separator {
+  background-color: transparent;
+  height: 1px;
+  margin: 1px 0;
+  border-style: solid;
+  border-color: #9e9978;
+}
+
+QMenu::icon {
+  margin: 1px;
+}
+
+QMenu::right-arrow {
+  image: url(./Oblivion Remastered/sub-menu-arrow.png);
+  subcontrol-origin: padding;
+  subcontrol-position: center right;
+  padding-right: 0.5em;
+}
+
+QMenu QPushButton {
+  background-color: transparent;
+  border-color: #9e9978;
+  margin: 1px 0 1px 0;
+}
+
+QMenu QCheckBox,
+QMenu QRadioButton {
+  background-color: transparent;
+  padding: 5px 2px;
+}
+
+/* ********************************************************** */
+/* LAUNCH APPLICATION & PROFILE DROP DOWN BOX */
+/* ********************************************************** */
+
+QComboBox {
+  min-height: 20px;
+  padding-left: 5px;
+  margin: 3px 0 1px 0;
+  border-style: solid;
+  border-width: 1px;
+   /* No extra brace here */
+}
+
+QComboBox:hover,
+QComboBox:editable:hover {
+  border-color: #DED7A8;
+}
+
+QComboBox:focus,
+QComboBox:editable:focus,
+QComboBox:on {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: #DED7A8;
+}
+
+QComboBox:editable {
+  padding-left: 3px;
+  background-color: transparent;
+}
+
+QComboBox::drop-down {
+  width: 20px;
+  subcontrol-origin: padding;
+  subcontrol-position: top right;
+  border: none;
+}
+
+QComboBox::down-arrow {
+  image: url(./Oblivion Remastered/combobox-down.png);
+}
+
+QComboBox QAbstractItemView {
+  background-color: rgba(0, 0, 0, 0.2);
+  selection-background-color: rgba(63, 63, 70, 0.8);
+  border-color: #9e9978;
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+}
+
+/* **************************************************************** */
+/* ACTION BUTTONS */
+/* Open list, Restore Backup, Create Backup, RUN, Shortcut Button   */
+/* Sort, Load order backup, Load Order Restore                     */
+/* **************************************************************** */
+
+QPushButton {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #9e9978;
+  min-height: 18px;
+  padding: 2px 5px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+QPushButton:hover,
+QPushButton:checked,
+QPushButton:focus {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #DED7A8;
+}
+
+QPushButton:pressed,
+QPushButton:checked:hover {
+  background-color: rgba(158, 153, 120, 0.5);
+}
+
+QPushButton:disabled {
+  background-color: rgba(45, 45, 48, 0.8);
+  border-color: #3f3f46;
+}
+
+QPushButton::menu-indicator {
+  image: url(./Oblivion Remastered/combobox-down.png);
+  subcontrol-origin: padding;
+  subcontrol-position: center right;
+  padding-right: 5%;
+}
+
+QDialog QPushButton {
+  color: #dddddd;
+  background-color: #9e9978;
+  border-color: #9e9978;
+  border-style: solid;
+  border-width: 1px;
+  min-width: 1.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+QDialog QPushButton:hover,
+QDialog QPushButton:focus,
+QDialog QPushButton:checked {
+  background-color: #747058;
+  border-color: #DED7A8;
+}
+
+QDialog QPushButton:disabled {
+  background-color: #9e9978;
+  border-color: #747058;
+}
+
+QWidget#tabImages QPushButton {
+  background-color: transparent;
+  margin: 0 0.3em;
+  padding: 0;
+}
+
+QDialog#QueryOverwriteDialog QPushButton {
+  margin-left: 0.5em;
+}
+
+QDialog#PyCfgDialog QPushButton:hover {
+  background-color: rgba(190, 230, 253, 0.8);
+}
+
+/* ************************** */
+/* SCROLL BAR */
+/* ************************** */
+
+QScrollBar:horizontal {
+  height: 18px;
+  border: none;
+  margin: 0 30.5px 0 30.5px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+QScrollBar::handle:horizontal {
+  min-width: 32px;
+  margin: 4px 2px;
+  background-color: #9e9978;
+}
+
+QScrollBar::add-line:horizontal {
+  width: 31px;
+  subcontrol-position: right;
+  subcontrol-origin: margin;
+  background-color: transparent;
+  border: none;
+}
+
+QScrollBar::sub-line:horizontal {
+  width: 31px;
+  subcontrol-position: left;
+  subcontrol-origin: margin;
+  background-color: transparent;
+  border: none;
+}
+
+QScrollBar::right-arrow:horizontal {
+  image: url(./Oblivion Remastered/scrollbar-right.png);
+}
+
+QScrollBar::right-arrow:horizontal:hover {
+  image: url(./Oblivion Remastered/scrollbar-right-hover.png);
+}
+
+QScrollBar::right-arrow:horizontal:disabled {
+  image: url(./Oblivion Remastered/scrollbar-right-disabled.png);
+}
+
+QScrollBar::left-arrow:horizontal {
+  image: url(./Oblivion Remastered/scrollbar-left.png);
+}
+
+QScrollBar::left-arrow:horizontal:hover {
+  image: url(./Oblivion Remastered/scrollbar-left-hover.png);
+}
+
+QScrollBar::left-arrow:horizontal:disabled {
+  image: url(./Oblivion Remastered/scrollbar-left-disabled.png);
+}
+
+QScrollBar:vertical {
+  width: 18px;
+  border: none;
+  margin: 30.5px 0 30.5px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+QScrollBar::handle:vertical {
+  min-height: 32px;
+  margin: 2px 4px;
+  background-color: #9e9978;
+}
+
+QScrollBar::add-line:vertical {
+  height: 31px;
+  subcontrol-position: bottom;
+  subcontrol-origin: margin;
+  background-color: transparent;
+  border: none;
+}
+
+QScrollBar::sub-line:vertical {
+  height: 31px;
+  subcontrol-position: top;
+  subcontrol-origin: margin;
+  background-color: transparent;
+  border: none;
+}
+
+QScrollBar::up-arrow:vertical {
+  image: url(./Oblivion Remastered/scrollbar-up.png);
+}
+
+QScrollBar::up-arrow:vertical:hover {
+  image: url(./Oblivion Remastered/scrollbar-up-hover.png);
+}
+
+QScrollBar::up-arrow:vertical:disabled {
+  image: url(./Oblivion Remastered/scrollbar-up-disabled.png);
+}
+
+QScrollBar::down-arrow:vertical {
+  image: url(./Oblivion Remastered/scrollbar-down.png);
+}
+
+QScrollBar::down-arrow:vertical:hover {
+  image: url(./Oblivion Remastered/scrollbar-down-hover.png);
+}
+
+QScrollBar::down-arrow:vertical:disabled {
+  image: url(./Oblivion Remastered/scrollbar-down-disabled.png);
+}
+
+QScrollBar::handle:hover {
+  background: #DED7A8;
+}
+
+QScrollBar::handle:pressed {
+  background: #DED7A8;
+}
+
+QScrollBar::handle:disabled {
+  background: rgba(85, 85, 88, 0.8);
+}
+
+QScrollBar::add-page,
+QScrollBar::sub-page {
+  background: transparent;
+}
+
+QAbstractScrollArea::corner {
+  background-color: transparent;
+}
+
+/* *************************************************************** */
+/* MAIN TREE VIEW INHERATED FROM QABSTRACTITEMVIEW */
+/* *************************************************************** */
+
+QTreeView {
+  border-style: solid;
+  border-width: 1px;
+}
+
+QTreeView::branch:closed:has-children {
+  image: url(./Oblivion Remastered/branch-closed.png);
+}
+
+QTreeView::branch:open:has-children {
+  image: url(./Oblivion Remastered/branch-open.png);
+}
+
+QTreeView::branch:selected,
+#bsaList::branch:selected {
+  image: url(./Oblivion Remastered/radio-checked.png);
+}
+
+QTreeView::item,
+#bsaList::item,
+#dataTree::item,
+#modList::item,
+#categoriesTree::item,
+#savegameList::item,
+#tabConflicts QTreeWidget::item,
+QListView::item,
+QTreeView#espList::item {
+  padding: 0.3em 0;
+}
+
+QTreeView::item:selected:disabled,
+QTreeWidget::item:selected:disabled,
+QListView::item:selected:disabled {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* **************************************************************************** */
+/* CHECKBOXES AND RADIO BUTTONS COMMON #QCHECKBOX, #QRADIOBUTTON */
+/* **************************************************************************** */
+
+QGroupBox::indicator,
+QTreeView::indicator,
+QListView::indicator,
+QCheckBox::indicator,
+QRadioButton::indicator {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #9e9978;
+  width: 13px;
+  height: 13px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+QGroupBox::indicator:hover,
+QTreeView::indicator:hover,
+QListView::indicator:hover,
+QCheckBox::indicator:hover,
+QRadioButton::indicator:hover {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #DED7A8;
+}
+
+QGroupBox::indicator:checked,
+QTreeView::indicator:checked,
+QListView::indicator:checked,
+QCheckBox::indicator:checked {
+  image: url(./Oblivion Remastered/checkbox-check.png);
+}
+
+QGroupBox::indicator:disabled,
+QTreeView::indicator:checked:disabled,
+QListView::indicator:checked:disabled,
+QCheckBox::indicator:checked:disabled {
+  image: url(./Oblivion Remastered/checkbox-check-disabled.png);
+}
+
+QTreeWidget#categoriesList::item {
+  background-position: center left;
+  background-repeat: no-repeat;
+  padding: 0.35em 10px;
+}
+
+QTreeWidget#categoriesList::item:has-children {
+  background-image: url(./Oblivion Remastered/branch-closed.png);
+}
+
+QTreeWidget#categoriesList::item:has-children:open {
+  background-image: url(./Oblivion Remastered/branch-open.png);
+}
+
+/* ********************************************* */
+/* SPECIAL STYLES */
+/* INCREASE CATEGORIES TAB WIDTH */
+/* ********************************************* */
+
+QTreeView#modList::indicator {
+  width: 15px;
+  height: 15px;
+}
+
+QLineEdit#versionEdit {
+  max-width: 100px;
+}
+
+QLineEdit#modFilterEdit {
+  margin-top: 2px;
+}
+
+QWidget#bsaTab QTreeWidget::indicator:unchecked {
+  background-color: Transparent;
+}
+
+/* ************************************ */
+/* DISPLAY RADIO BUTTON */
+/* ************************************ */
+
+QRadioButton::indicator {
+  border-radius: 7px;
+}
+
+QRadioButton::indicator:checked {
+  background-color: #9e9978;
+  border-width: 2px;
+  width: 11px;
+  height: 11px;
+}
+
+QRadioButton::indicator:checked:hover {
+  border-color: #DED7A8;
+}
+
+/* *************************************************** */
+/* SPINNERS #QSPINBOX, #QDOUBLESPINBOX */
+/* *************************************************** */
+
+QAbstractSpinBox {
+  min-height: 15px;
+  padding: 2px;
+  border-style: solid;
+  border-width: 1px;
+  margin: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: #9e9978;
+}
+
+QAbstractSpinBox:hover {
+  border-color: #DED7A8;
+}
+
+QAbstractSpinBox:focus {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: #DED7A8;
+}
+
+QAbstractSpinBox::up-button,
+QAbstractSpinBox::down-button {
+  border-style: solid;
+  border-width: 1px;
+  subcontrol-origin: padding;
+}
+
+QAbstractSpinBox::up-button {
+  subcontrol-position: top right;
+}
+
+QAbstractSpinBox::down-button {
+  subcontrol-position: bottom right;
+}
+
+QAbstractSpinBox::up-button:hover,
+QAbstractSpinBox::down-button:hover {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #DED7A8;
+}
+
+QAbstractSpinBox::up-button:pressed,
+QAbstractSpinBox::down-button:pressed {
+  background-color: rgba(158, 153, 120, 0.5);
+}
+
+QAbstractSpinBox::up-button:disabled,
+QAbstractSpinBox::down-button:disabled {
+  background-color: rgba(45, 45, 48, 0.8);
+  border-color: #3f3f46;
+}
+
+QAbstractSpinBox::up-arrow {
+  image: url(./Oblivion Remastered/spinner-up.png);
+}
+
+QAbstractSpinBox::down-arrow {
+  image: url(./Oblivion Remastered/spinner-down.png);
+}
+
+/* ******************************************************* */
+/* TOOLTIPS #QTOOLTIP, #SAVEGAMEINFOWIDGET */
+/* ******************************************************* */
+
+QToolTip,
+SaveGameInfoWidget {
+  background-color: transparent;
+  border-color: #9e9978;
+  color: #f1f1f1;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+}
+
+QStatusBar::item {
+  border: none;
+}
+
+/* ******************************************* */
+/* HANDLES WEB, NEXUS INFO TAB */
+/* ******************************************* */
+
+QWebView {
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: #9e9978;
+}
+
+QLineEdit {
+  min-height: 15px;
+  padding: 2px;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: #9e9978;
+}
+
+QLineEdit:hover {
+  border-color: #DED7A8;
+}
+
+QLineEdit:focus {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: #DED7A8;
+}
+
+QLineEdit QToolButton,
+QLineEdit QToolButton:hover {
+  background: none;
+  margin-top: 1px;
+}
+
+QLineEdit#espFilterEdit QToolButton {
+  margin-top: -2px;
+  margin-bottom: 1px;
+}
+
+QLineEdit[valid-filter=false] {
+  background-color: #661111 !important;
+}
+
+LinkLabel {
+  qproperty-linkColor: #9e9978;
+}
+
+/* ********************************** */
+/* FONT STYLES & SIZE */
+/* ********************************** */
+
+QLabel {
+  background-color: transparent;
+  color: #9e9978;
+}
+
+QGroupBox {
+  border-color: #9e9978;
+  border-style: solid;
+  border-width: 1px;
+  padding: 1em 0.3em 0.3em 0.3em;
+  margin-top: 0.65em;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  padding: 2px;
+  left: 10px;
+}
+
+/* ********************** */
+/* ICONS */
+/* ********************** */
+
+QWidget#tabESPs QToolButton {
+  color: #000000;
+  background-color: rgba(221, 221, 221, 0.8);
+  border-color: #9e9978;
+  border-style: solid;
+  border-width: 1px;
+}
+
+QWidget#tabESPs QToolButton:hover {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #9e9978;
+}
+
+QWidget#tabESPs QToolButton:focus {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #9e9978;
+}
+
+QWidget#tabESPs QToolButton:disabled {
+  background-color: rgba(45, 45, 48, 0.8);
+  border-color: #3f3f46;
+}
+
+#actionChange_Game {
+  icon: url("./Oblivion Remastered/Toolbar/instances.png");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/instances.png");
+}
+
+#actionInstallMod {
+  icon: url("./Oblivion Remastered/archives.PNG");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/archives.png");
+}
+
+#actionModPage {
+  icon: url("./Oblivion Remastered/Toolbar/globe.png");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/globe.png");
+}
+
+#actionNexus {
+  icon: url("./Oblivion Remastered/Toolbar/nexus.png");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/nexus.png");
+}
+
+#actionAdd_Profile {
+  icon: url("./Oblivion Remastered/Toolbar/profiles.png");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/profiles.png");
+}
+
+#action_Refresh {
+  icon: url("./Oblivion Remastered/Toolbar/refresh.png");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/refresh.png");
+}
+
+#actionModify_Executables {
+  icon: url("./Oblivion Remastered/Toolbar/executables.png");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/executables.png");
+}
+
+#actionTool {
+  icon: url("./Oblivion Remastered/Toolbar/tools.png");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/tools.png");
+}
+
+#actionSettings {
+  icon: url("./Oblivion Remastered/Toolbar/settings.png");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/settings.png");
+}
+
+#actionEndorseMO {
+  icon: url("./Oblivion Remastered/Toolbar/endorse.png");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/endorse.png");
+}
+
+#actionNotifications {
+  icon: url("./Oblivion Remastered/Toolbar/problems.png");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/problems.png");
+}
+
+#actionUpdate {
+  icon: url("./Oblivion Remastered/Toolbar/update.png");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/update.png");
+}
+
+#actionHelp {
+  icon: url("./Oblivion Remastered/Toolbar/help.png");
+  qproperty-icon: url("./Oblivion Remastered/Toolbar/help.png");
+}
+
+#listOptionsBtn {
+  padding-left: 2px;
+  icon: url("./Oblivion Remastered/icons/dots.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/dots.png");
+}
+
+#openFolderMenu {
+  padding-left: 4px;
+  icon: url("./Oblivion Remastered/icons/folder.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/folder.png");
+}
+
+#restoreModsButton, #restoreButton {
+  icon: url("./Oblivion Remastered/icons/restore.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/restore.png");
+}
+
+#saveModsButton, #saveButton {
+  icon: url("./Oblivion Remastered/icons/backup.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/backup.png");
+}
+
+#clearFiltersButton {
+  icon: url("./Oblivion Remastered/icons/cross.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/cross.png");
+}
+
+#bossButton {
+  icon: url("./Oblivion Remastered/icons/sort.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/sort.png");
+}
+
+#refreshButton, #btnRefreshData, #dataTabRefresh, #btnRefreshDownloads {
+  icon: url("./Oblivion Remastered/icons/refresh.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/refresh.png");
+}
+
+#clearCacheButton, #revokeNexusAuthButton, #nexusDisconnect {
+  icon: url("./Oblivion Remastered/icons/cross.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/cross.png");
+}
+
+#deactivateESP {
+  icon: url("./Oblivion Remastered/icons/minus.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/minus.png");
+}
+
+#activateESP {
+  icon: url("./Oblivion Remastered/icons/plus.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/plus.png");
+}
+
+
+#startButton {
+  /*border-image: url(./Oblivion Remastered/Start_Button.png);*/
+  /*color: #000000;*/
+  /*padding: 6px;*/
+  /*border-radius: 0;*/
+  icon: url("./Oblivion Remastered/icons/run.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/run.png");
+}
+
+/*
+#startButton:hover {
+  color: #000000;
+  border-image: url(./Oblivion Remastered/Start_Button_Hover.png);
+}
+*/
+
+/*
+#startButton:pressed {
+  color: #000000;
+  border-image: url(./Oblivion Remastered/Start_Button_Pressed.png);
+}
+*/
+
+#linkButton {
+  border-radius: 0;
+  icon: url("./Oblivion Remastered/icons/shortcut.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/shortcut.png");
+}
+
+#executablesListBox {
+  padding: 4px;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+
+#refresh {
+  icon: url("./Oblivion Remastered/icons/refresh.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/refresh.png");
+}
+
+#visitNexus {
+  icon: url("./Oblivion Remastered/icons/nexus.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/nexus.png");
+}
+
+#track {
+  icon: url("./Oblivion Remastered/icons/pin.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/pin.png");
+}
+
+#endorse {
+  icon: url("./Oblivion Remastered/icons/heart.png");
+  qproperty-icon: url("./Oblivion Remastered/icons/heart.png");
+}
+
+/* Progress Bars (Downloads) #QProgressBar */
+QProgressBar {
+  background-color: #9e9978;
+  color: #000;
+  border-color: #bcbcbc;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  margin: 0px;
+}
+
+QProgressBar::chunk {
+  background: #06b025;
+}
+
+DownloadListView[downloadView=standard]::item {
+  padding: 16px;
+}
+
+DownloadListView[downloadView=compact]::item {
+  padding: 4px;
+}
+
+/* Sliders #QSlider */
+QSlider::groove:horizontal {
+  background-color: #9e9978;
+  border: none;
+  height: 8px;
+  margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+  width: 0.5em;
+  height: 2em;
+  margin: -7px 0;
+  subcontrol-origin: margin;
+  color: #dddddd;
+  background-color: #9e9978;
+  border-color: #9e9978;
+  border-style: solid;
+  border-width: 1px;
+}
+
+QSlider::handle:horizontal:hover,
+QSlider::handle:horizontal:pressed,
+QSlider::handle:horizontal:focus:pressed {
+  background-color: #747058;
+  border-color: #DED7A8;
+}
+
+QSlider::handle:horizontal:focus {
+  background-color: #9e9978;
+  border-color: #DED7A8;
+}
+
+QSlider::handle:horizontal:disabled {
+  background-color: #9e9978;
+  border-color: #747058;
+}
+
+QSlider::handle:vertical {
+  color: #dddddd;
+  background-color: #9e9978;
+  border-color: #9e9978;
+  border-style: solid;
+  border-width: 1px;
+}
+
+QSlider::handle:vertical:hover,
+QSlider::handle:vertical:pressed,
+QSlider::handle:vertical:focus:pressed {
+  background-color: #747058;
+  border-color: #DED7A8;
+}
+
+QSlider::handle:vertical:focus {
+  background-color: #9e9978;
+  border-color: #DED7A8;
+}
+
+QSlider::handle:vertical:disabled {
+  background-color: #9e9978;
+  border-color: #747058;
+}
