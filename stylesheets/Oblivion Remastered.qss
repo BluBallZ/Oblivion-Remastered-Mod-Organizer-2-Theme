@@ -131,7 +131,7 @@ QLCDNumber {
 
 QToolBar {
   border: none;
-  background-image: url(./Oblivion Remastered/OblivionToolbar.png); /* Corrected: Added .png */
+  border-image: url(./Oblivion Remastered/OblivionToolbar.png); /* Corrected: Added .png */
 }
 
 QToolBar::separator {
